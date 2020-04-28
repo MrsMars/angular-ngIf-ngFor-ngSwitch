@@ -1,0 +1,38 @@
+<p>ngIf case I</p>
+<p *ngIf="condition">Hello World</p>
+<p *ngIf="!condition">Bye World</p>
+<br>
+
+<p>ngIf case II</p>
+<p *ngIf="condition; else unset">Hello World</p>
+<ng-template #unset>
+	<p>Bye World</p>
+</ng-template>
+<br>
+
+<p>ngIf case III</p>
+<div *ngIf="condition; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>Hello World</ng-template>
+<ng-template #elseBlock>Bye World</ng-template>
+<br>
+
+<button (click)="toggle()">Toggle</button>
+<br>
+
+<p>ngFor</p>
+<ul>
+	<li *ngFor="let item of items">{{item}}</li>
+</ul>
+<br>
+
+<p>ngSwitch</p>
+<div [ngSwitch]="count">
+	<ng-template ngSwitchCase="1">{{count * 10}}</ng-template>
+	<ng-template ngSwitchCase="2">{{count * 100}}</ng-template>
+	<ng-template ngSwitchDefault>{{count * 1000}}</ng-template>
+</div>
+<br>
+
+<p>While directive</p>
+<p *while="condition">First article</p>
+<p *while="!condition">Second article</p>
